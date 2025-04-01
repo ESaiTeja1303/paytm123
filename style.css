@@ -18,17 +18,110 @@ li{
     position: sticky;
     box-shadow: 0 5px 20px rgba(0,41,112,.1);
 }   
-.navbar{
+.navbar {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between; /* Spread elements evenly */
+    align-items: center; /* Align everything properly */
     padding: 13px 18px;
     background-color: #ffffff;
-    max-width: 1170px;
+    max-width: 1170px; /* Set a max width to avoid breaking */
     margin: 0 auto;
-    height: 38px;
+    height: 50px; /* Adjust height if needed */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+
+/* Ensure list items are properly positioned */
+.nav-list {
+    position: relative;
+}
+
+.nav-list ul {
+    display: flex;
+    flex-direction: column; 
+    gap: 40px; 
+    font-weight: 600;
+    font-size: 14px;
+    align-items: center;
+    white-space: nowrap; 
+    display: none;
+}
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Initially hide the dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    display: none;
+    flex-direction: column;
+    min-width: 220px; 
+    padding: 8px 0;
+    z-index: 1000;
+    border: 1px solid #e0e0e0; 
+    transition: all 0.2s ease-in-out;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.dropdown-menu li:hover {
+    background: #f4f4f4; 
+    color: #0073e6; 
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+
+/* Make dropdown visible only when hovering over "Ticket Booking" */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Dropdown items styling */
+.dropdown-menu li {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    text-align: left;
     cursor: pointer;
 }
+
+/* Remove border from the last item */
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect on menu items */
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+
 .bars{
     padding-right: 10px;
     display: none;
